@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+	<title>About Page</title>
+</head>
+<style>
+	 #main-footer
+    {
+      color: #FFFFFF;
+      font-family: "Segoe UI";
+      background: #2B2B2B;
+      text-align: center;
+      margin-top: 75px;
+      padding: 16px;
+      bottom: 8px;
+    }
+	
+    .img_holder img{
+        max-width: 100%; max-height: 100%;
+    }
+
+    .btn-file {
+    position: relative;
+    overflow: hidden;
+    }
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+</style>
+<body>
+
+	<header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <div class="container">
+      <a class="navbar-brand mr-4" href="/">Multiple Disease Detection</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/about">About</a>
+          <a class="nav-item nav-link" href="/covid_19">COVID-19(X-ray)</a>
+          <a class="nav-item nav-link" href="/covidct_19">COVID-19(CT-Scan)</a>
+          <a class="nav-item nav-link" href="/Malaria">Malaria</a>
+          <a class="nav-item nav-link" href="/Pneumonia">Pneumonia</a>
+
+        </div>
+        <!-- Navbar Right Side 
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register<
+      </div>-->
+    </div>
+  </nav>
+</header>
+
+	<div class="container">
+		<h1>Details : </h1>
+    <h3>This is a deep learning based medical web application.</h3>
+    <p>The prediction about the disease is made with the help of the mial images and deep learning which itself is trained on the thousands of the datasets</p>
+
+<h2>1.Malaria</h2>
+<div style="text-align: center; margin-top: 20px">
+       <img style="max-width: 600px" src="{{ url_for('static', filename='malaria.jpg') }}"/>
+   </div>
+<h3>Overview</h3>
+<p>
+Malaria is a life-threatening mosquito-borne blood disease. The Anopheles mosquito transmits it to humans.</p><br>
+<p>The parasites in mosquitos that spread malaria belong to the Plasmodium genus. Over 100 types of Plasmodium parasite can infect a variety of species. Different types replicate at different rates, changing how quickly the symptoms escalate, and the severity of the disease.</p>
+<h3>Symptoms</h3>
+<ul>
+    <li>fever and chills</li>
+    <li>impaired consciousness</li>
+    <li>prostration, or adopting a prone position
+    multiple convulsions</li>
+    <li>deep breathing and respiratory distress</li>
+    <li>abnormal bleeding and signs of anemia</li>
+    <li>clinical jaundice and evidence of vital organ dysfunction</li>
+  </ul>
+  <br>
+  <hr>
+  <br>
+
+  <h2>2.Pneumonia</h2>
+  <div style="text-align: center; margin-top: 20px">
+       <img style="max-width: 600px" src="{{ url_for('static', filename='pneumonia.png') }}"/>
+   </div>
+  <p>Pneumonia is an infection in one or both lungs. It can be caused by bacteria, viruses, or fungi. Bacterial pneumonia is the most common type in adults. Pneumonia causes inflammation in the air sacs in your lungs, which are called alveoli.<p>
+  <h3>Symptopms</h3>
+ <p> Common symptoms include:</p>
+<ul>
+    <li>cough</li>
+    <li>rusty or green phlegm, or sputum, coughed up from lungs
+    fever</li>
+    <li>fast breathing and shortness of breath</li>
+    <li>shaking chills</li>
+    <li>chest pain that usually worsens when taking a deep breath, known as pleuritic pain</li>
+    <li>fast heartbeat</li>
+    <li>fatigue and weakness</li>
+    <li>nausea and vomiting</li>
+    <li>diarrhea</li>
+    <li>sweating</li>
+    <li>headache</li>
+    <li>muscle pain</li>
+    <li>confusion or delirium, especially in older adults
+    dusky or purplish skin color, or cyanosis, from poorly oxygenated blood</li>
+</ul>
+<p>Symptoms can vary depending on other underlying conditions and the type of pneumonia.</p><br><hr>
+<br>
+<hr>
+
+  </div>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<footer id="main-footer">
+      Copyright &copy; 2020
+    </footer>
+</body>
+</html>
