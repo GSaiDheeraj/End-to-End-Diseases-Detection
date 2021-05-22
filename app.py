@@ -105,7 +105,7 @@ def upload_file():
 
             return render_template('malariapredict.html', image_file_name=file.filename, label=label, accuracy=accuracy, prediction=prediction)
         except:
-            flash("Please select the image first !!", "danger")
+            flash("Please select the cell image first !!", "danger")
             return redirect(url_for("Malaria"))
 
 #Pneumonia
