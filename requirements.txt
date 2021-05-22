@@ -6,4 +6,5 @@ MarkupSafe==1.1.1
 Werkzeug==0.15.5
 Pillow>=5.4.0
 tensorflow-cpu
+numpy==1.19.2
 Flask-SocketIO
