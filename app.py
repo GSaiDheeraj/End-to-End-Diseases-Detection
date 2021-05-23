@@ -29,11 +29,11 @@ STATIC_FOLDER = 'static'
 
 #global graph
 #graph = tf.get_default_graph()
-model = tensorflow.keras.models.load_model('Malaria.h5')
-model1 = tensorflow.keras.models.load_model("PneumoniaXRay.h5")
-model2 = tensorflow.keras.models.load_model("CovidXRay.h5")
-model3 = tensorflow.keras.models.load_model("CovidCT.h5")
-model4 = tensorflow.keras.models.load_model("BrainCT.h5")
+model = tf.keras.models.load_model('Malaria.h5')
+model1= tf.keras.models.load_model("PneumoniaXRay.h5")
+model2 = tf.keras.models.load_model("CovidXRay.h5")
+model3 = tf.keras.models.load_model("CovidCT.h5")
+model4 = tf.keras.models.load_model("BrainCT.h5")
 
 
 
@@ -43,7 +43,6 @@ def api(full_path):
     data = keras.preprocessing.image.load_img(full_path, target_size=(50, 50, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0 / 255
-        #with graph.as_default():
     predicted = model.predict(data)
     return predicted
 #pneumonia
@@ -51,8 +50,8 @@ def api1(full_path):
     #with graph.as_default():
     data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
     data = np.expand_dims(data, axis=0)
-    data = data * 1.0/ 255
-    predicted = model2.predict(data)
+    data = data * 1.0 / 255
+    predicted = model.predict(data)
     return predicted
 
 #Covid-19
@@ -60,23 +59,25 @@ def api111(full_path):
     #with graph.as_default():
     data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
     data = np.expand_dims(data, axis=0)
-    data = data * 1.0/ 255
-    predicted = model2.predict(data)
+    data = data * 1.0 / 255
+    predicted = model.predict(data)
     return predicted
+
 def api1111(full_path):
     #with graph.as_default():
     data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
     data = np.expand_dims(data, axis=0)
-    data = data * 1.0/ 255
-    predicted = model3.predict(data)
+    data = data * 1.0 / 255
+    predicted = model.predict(data)
     return predicted
+
 #Brain
 def api2(full_path):
     #with graph.as_default():
     data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
     data = np.expand_dims(data, axis=0)
-    data = data * 1.0/ 255
-    predicted = model4.predict(data)
+    data = data * 1.0 / 255
+    predicted = model.predict(data)
     return predicted
 
 # Malaria
