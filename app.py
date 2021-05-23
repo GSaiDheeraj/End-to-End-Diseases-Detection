@@ -29,10 +29,10 @@ STATIC_FOLDER = 'static'
 
 #global graph
 #graph = tf.get_default_graph()
-model = tensorflow.keras.models.load_model('model111.h5')
-model1 = tensorflow.keras.models.load_model("pneumonia.h5")
-model2 = tensorflow.keras.models.load_model("Covid_model.h5")
-model3 = tensorflow.keras.models.load_model("CovidCT_model.h5")
+model = tensorflow.keras.models.load_model('Malaria.h5')
+model1 = tensorflow.keras.models.load_model("PneumoniaXRay.h5")
+model2 = tensorflow.keras.models.load_model("CovidXRay.h5")
+model3 = tensorflow.keras.models.load_model("CovidCT.h5")
 model4 = tensorflow.keras.models.load_model("BrainCT.h5")
 
 # Malaria
