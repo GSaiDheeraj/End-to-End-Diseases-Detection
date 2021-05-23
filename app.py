@@ -49,7 +49,7 @@ def api(full_path):
 #pneumonia
 def api1(full_path):
     #with graph.as_default():
-    data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
+    data = keras.preprocessing.image.load_img(full_path, target_size=(128, 128, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0/ 255
     predicted = model2.predict(data)
@@ -58,14 +58,14 @@ def api1(full_path):
 #Covid-19
 def api111(full_path):
     #with graph.as_default():
-    data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
+    data = keras.preprocessing.image.load_img(full_path, target_size=(128, 128, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0/ 255
     predicted = model2.predict(data)
     return predicted
 def api1111(full_path):
     #with graph.as_default():
-    data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
+    data = keras.preprocessing.image.load_img(full_path, target_size=(128, 128, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0/ 255
     predicted = model3.predict(data)
@@ -73,7 +73,7 @@ def api1111(full_path):
 #Brain
 def api2(full_path):
     #with graph.as_default():
-    data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
+    data = keras.preprocessing.image.load_img(full_path, target_size=(128, 128, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0/ 255
     predicted = model4.predict(data)
