@@ -69,12 +69,12 @@ def api1111(full_path):
     predicted = model3.predict(data)
     return predicted
 def api2(full_path):
-    with graph.as_default():
-        data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
-        data = np.expand_dims(data, axis=0)
-        data = data / 255
-        predicted = model4.predict(data)
-        return predicted
+    #with graph.as_default():
+    data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
+    data = np.expand_dims(data, axis=0)
+    data = data / 255
+    predicted = model4.predict(data)
+    return predicted
 
 # Malaria
 @app.route('/upload', methods=['POST', 'GET'])
