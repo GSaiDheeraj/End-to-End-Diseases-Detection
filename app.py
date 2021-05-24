@@ -230,7 +230,7 @@ def about():
     return render_template("about.html")
 
 @app.route("/Brain")
-def about():
+def brain():
     return render_template("brain.html")
 
 @app.route("/covid_19")
