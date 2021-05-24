@@ -193,7 +193,7 @@ def upload2_file():
             file = request.files['image']
             full_name = os.path.join(UPLOAD_FOLDER, file.filename)
             file.save(full_name)
-            indices = {1: 'Healthy', 0: 'Corona-Infected'}
+            indices = {1: 'Healthy', 0: 'Brain-Tumor'}
             result = api1111(full_name)
             predicted_class = np.asscalar(np.argmax(result, axis=1))
             accuracy = round(result[0][predicted_class] * 100, 2)
