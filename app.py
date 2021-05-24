@@ -33,7 +33,7 @@ model = tensorflow.keras.models.load_model('model111.h5')
 model1 = tensorflow.keras.models.load_model("pneumonia.h5")
 model2 = tensorflow.keras.models.load_model("Covid_model.h5")
 model3 = tensorflow.keras.models.load_model("CovidCT.h5")
-model4 = tensorflow.keras.models.load_model("BrainCT.h5")
+model4 = tensorflow.keras.models.load_model("BrainCT1.h5")
 
 # Malaria
 def api(full_path):
@@ -70,7 +70,7 @@ def api1111(full_path):
     return predicted
 def api2(full_path):
     #with graph.as_default():
-    data = keras.preprocessing.image.load_img(full_path, target_size=(128, 128, 3))
+    data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0/ 255
     predicted = model4.predict(data)
