@@ -32,7 +32,7 @@ STATIC_FOLDER = 'static'
 model = tensorflow.keras.models.load_model('model111.h5')
 model1 = tensorflow.keras.models.load_model("pneumonia.h5")
 model2 = tensorflow.keras.models.load_model("Covid_model.h5")
-model3 = tensorflow.keras.models.load_model("CovidCT_model.h5")
+model3 = tensorflow.keras.models.load_model("CovidCT.h5")
 
 
 # Malaria
