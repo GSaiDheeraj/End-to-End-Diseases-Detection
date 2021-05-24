@@ -35,7 +35,7 @@ model4 = tf.keras.models.load_model("BrainCT1.h5")
 # Malaria
 def api(full_path):
     #with graph.as_default():
-    data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
+    data = keras.preprocessing.image.load_img(full_path, target_size=(50, 50, 3))
     data = np.expand_dims(data, axis=0)
     data = data*1.0/255
     predicted = model.predict(data)
