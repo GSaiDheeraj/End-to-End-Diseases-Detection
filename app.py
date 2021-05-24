@@ -44,6 +44,7 @@ def api(full_path):
         #with graph.as_default():
     predicted = model.predict(data)
     return predicted
+
 #pneumonia
 def api1(full_path):
     #with graph.as_default():
@@ -61,6 +62,7 @@ def api111(full_path):
     data = data * 1.0/ 255
     predicted = model2.predict(data)
     return predicted
+
 def api1111(full_path):
     #with graph.as_default():
     data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
@@ -68,6 +70,7 @@ def api1111(full_path):
     data = data * 1.0/ 255
     predicted = model3.predict(data)
     return predicted
+
 def api2(full_path):
     #with graph.as_default():
     data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
