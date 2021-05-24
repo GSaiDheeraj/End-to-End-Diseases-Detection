@@ -11,7 +11,7 @@ app=Flask(__name__,template_folder='template')
 
 
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -23,8 +23,8 @@ STATIC_FOLDER = 'static'
 #from tensorflow.keras.models import load_model
 import keras
 
-global graph
-graph = tf.get_default_graph()
+# global graph
+# graph = tf.get_default_graph()
 model = tf.keras.models.load_model('model111.h5')
 model1= tf.keras.models.load_model("pneumonia.h5")
 model2 = tf.keras.models.load_model("Covid_model.h5")
