@@ -29,11 +29,11 @@ STATIC_FOLDER = 'static'
 
 #global graph
 #graph = tf.get_default_graph()
-model = tensorflow.keras.models.load_model('Malaria.h5')
-model1 = tensorflow.keras.models.load_model("PneumoniaXRay.h5")
-model2 = tensorflow.keras.models.load_model("CovidXRay.h5")
-model3 = tensorflow.keras.models.load_model("CovidCT.h5")
-model4 = tensorflow.keras.models.load_model("BrainCT.h5")
+model = tensorflow.keras.models.load_model('model111.h5')
+model1 = tensorflow.keras.models.load_model("pneumonia.h5")
+model2 = tensorflow.keras.models.load_model("Covid_model.h5")
+model3 = tensorflow.keras.models.load_model("CovidCT_model.h5")
+
 
 # Malaria
 def api(full_path):
@@ -67,13 +67,6 @@ def api1111(full_path):
     data = np.expand_dims(data, axis=0)
     data = data * 1.0/ 255
     predicted = model3.predict(data)
-    return predicted
-def api2(full_path):
-    #with graph.as_default():
-    data = keras.preprocessing.image.load_img(full_path, target_size=(224, 224, 3))
-    data = np.expand_dims(data, axis=0)
-    data = data / 255
-    predicted = model4.predict(data)
     return predicted
 
 # Malaria
@@ -182,47 +175,21 @@ def upload1111_file():
         except:
             flash("Please select the CT-Scan image first !!", "danger")
             return redirect(url_for("covidct_19"))
-#Brain
-@app.route('/upload2', methods=['POST', 'GET'])
-def upload2_file():
-    #with graph.as_default():
-    if request.method == 'GET':
-        return render_template('brain.html')
-    else:
-        try:
-            file = request.files['image']
-            full_name = os.path.join(UPLOAD_FOLDER, file.filename)
-            file.save(full_name)
-            indices = {1: 'Healthy', 0: 'Brain Tumor'}
-            result = api1111(full_name)
-
-            predicted_class = np.asscalar(np.argmax(result, axis=1))
-            accuracy = round(result[0][predicted_class] * 100, 2)
-            label = indices[predicted_class]
-            if accuracy<85:
-                prediction = "Please, Check with the Doctor."
-            else:
-                prediction = "Result is accurate"
-            return render_template('brainpredict.html', image_file_name = file.filename, label = label, accuracy = accuracy, prediction=prediction)
-        except:
-            flash("Please select the X-ray image first !!", "danger")
-            return redirect(url_for("Brain"))
-
 	
 @app.route('/uploads/<filename>')
 def send_file(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
 #logged in Home page
-
-# @app.route("/login")
-# def login():
-#     return render_template("login.html")
-
-# @app.route("/register")
-# def login1():
-#     return render_template("signup.html")
 @app.route("/")
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/register")
+def login1():
+    return render_template("signup.html")
+
 @app.route("/home")
 def index2():
     return render_template("home.html")
@@ -230,10 +197,6 @@ def index2():
 @app.route("/about")
 def about():
     return render_template("about.html")
-
-@app.route("/Brain")
-def Brain():
-    return render_template("brain.html")
 
 @app.route("/covid_19")
 def covid_19():
