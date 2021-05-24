@@ -21,7 +21,7 @@ UPLOAD_FOLDER = 'uploads'
 STATIC_FOLDER = 'static'
 
 #from tensorflow.keras.models import load_model
-import keras
+#import keras
 
 # global graph
 # graph = tf.get_default_graph()
