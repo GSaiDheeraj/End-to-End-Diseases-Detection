@@ -237,8 +237,6 @@ def Malaria():
 def Pneumonia():
     return render_template("pneumonia.html")
 
-from flask_login import login_manager
-
 
 if __name__ == "__main__":
-    app.run(debug=True)
+	app.run(debug=True)
