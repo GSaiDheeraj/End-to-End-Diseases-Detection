@@ -1,16 +1,19 @@
 from flask import Flask, render_template, url_for, flash, redirect
-from flask import send_from_directory
 from flask import request
+from flask import send_from_directory
+from flask_socketio import SocketIO
+
 import numpy as np
 import tensorflow
 from tensorflow import keras
 import tensorflow as tf
 import os
+from tensorflow.keras.models import load_model
 
 app=Flask(__name__,template_folder='template')
 
 
-app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+app.config['SECRET_KEY'] = "UddA58IkCqP5nZkwEzA7YA"
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
 
 
@@ -25,12 +28,11 @@ STATIC_FOLDER = 'static'
 
 # global graph
 # graph = tf.get_default_graph()
-model = tf.keras.models.load_model('model111.h5')
-model1= tf.keras.models.load_model("pneumonia.h5")
-model2 = tf.keras.models.load_model("Covid_model.h5")
-model3 = tf.keras.models.load_model("CovidCT.h5")
-model4 = tf.keras.models.load_model("BrainCT1.h5")
-
+model4 = tensorflow.keras.models.load_model("BrainCT1.h5")
+model = tensorflow.keras.models.load_model('model111.h5')
+model1 = tensorflow.keras.models.load_model("pneumonia.h5")
+model2 = tensorflow.keras.models.load_model("Covid_model.h5")
+model3 = tensorflow.keras.models.load_model("CovidCT.h5")
 
 # Malaria
 def api(full_path):
@@ -189,7 +191,7 @@ def upload2_file():
             full_name = os.path.join(UPLOAD_FOLDER, file.filename)
             file.save(full_name)
             indices = {1: 'Healthy', 0: 'Brain Tumor'}
-            result = api1111(full_name)
+            result = api2(full_name)
             predicted_class = np.asscalar(np.argmax(result, axis=1))
             accuracy = round(result[0][predicted_class] * 100, 2)
             label = indices[predicted_class]
