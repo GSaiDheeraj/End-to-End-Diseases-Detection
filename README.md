@@ -15,3 +15,4 @@ Transfer learning algorithms like VGG-16, VGG-19, Inception Resnet V2 were used 
 
 1) Tensorflow-gpu 2.6.0
 2) Python 3.6
+$ pip install -r requirements.txt
